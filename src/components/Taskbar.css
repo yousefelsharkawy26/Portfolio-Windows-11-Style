@@ -1,0 +1,70 @@
+/* Taskbar styles will be migrated here */
+
+.taskbar {
+  width: 100vw;
+  height: 54px;
+  background: rgba(24, 28, 34, 0.88);
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  padding-right: 0;
+}
+
+.taskbar-icons {
+  display: flex;
+  gap: 32px;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  height: 100%;
+  align-items: center;
+}
+
+.taskbar-icon {
+  font-size: 1.7rem;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s;
+  border-radius: 10px;
+  padding: 6px 12px;
+  color: #e3e9f7;
+}
+
+.taskbar-icon:hover {
+  background: #23272f;
+  transform: scale(1.1);
+}
+
+.taskbar-datetime {
+  margin-left: auto;
+  margin-right: 32px;
+  color: #e3e9f7;
+  font-size: 1.08rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: right;
+  min-width: 90px;
+  user-select: none;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+@media (max-width: 700px) {
+  .taskbar-datetime {
+    margin-right: 10px;
+    font-size: 0.95rem;
+    min-width: 60px;
+  }
+}

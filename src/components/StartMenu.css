@@ -1,0 +1,232 @@
+/* StartMenu styles will be migrated here */
+.win11 {
+  width: 420px;
+  padding: 0 0 24px 0;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 100vh;
+}
+
+.start-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px 0 28px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: #23272f;
+  border-radius: 8px;
+  padding: 4px 10px;
+  flex: 1;
+  margin-right: 18px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  color: #e3e9f7;
+}
+
+.search-bar input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 1rem;
+  padding: 4px 6px;
+  width: 100%;
+  color: #e3e9f7;
+}
+
+.search-icon {
+  font-size: 1.1rem;
+  margin-right: 6px;
+  color: #888;
+}
+
+.pinned-section,
+.recommended-section {
+  width: 100%;
+  padding: 0 28px;
+  box-sizing: border-box;
+}
+
+.section-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #b4c6e7;
+  margin: 18px 0 10px 0;
+}
+
+.pinned-icons {
+  grid-template-columns: repeat(4, 60px);
+  gap: 18px 18px;
+  justify-content: flex-start;
+  margin-bottom: 0;
+}
+
+.recommended-section {
+  margin-top: 10px;
+}
+
+.recommended-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.recommended-item {
+  display: flex;
+  align-items: center;
+  background: #23272f;
+  border-radius: 10px;
+  padding: 8px 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.rec-icon {
+  font-size: 1.5rem;
+  margin-right: 12px;
+}
+
+.rec-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #e3e9f7;
+}
+
+.rec-desc {
+  font-size: 0.92rem;
+  color: #e3e9f7;
+}
+
+.user-avatar {
+  margin-bottom: 0;
+  background: #23272f;
+  color: #e3e9f7;
+}
+
+.icons {
+  display: grid;
+  grid-template-columns: repeat(2, 80px);
+  gap: 28px 36px;
+  margin-bottom: 16px;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.icon:hover {
+  transform: scale(1.08);
+}
+
+.icon-emoji {
+  font-size: 2.2rem;
+  background: #23272f;
+  border-radius: 16px;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+}
+
+.icon-label {
+  font-size: 1rem;
+  color: #e3e9f7;
+}
+
+.start-menu.win11 {
+  display: flex;
+  z-index: 20;
+  position: relative;
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  transition: opacity 0.38s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.38s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s linear 0.38s;
+  pointer-events: none;
+  visibility: hidden;
+  background: rgba(24, 28, 34, 0.96);
+  color: #e3e9f7;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.38);
+}
+.start-menu.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+  visibility: visible;
+  transition: opacity 0.38s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.38s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s linear 0s;
+}
+
+.overlay {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.12);
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.38s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0s linear 0.38s;
+  visibility: hidden;
+}
+
+.overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transition: opacity 0.38s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0s linear 0s;
+}
+
+@media (max-width: 600px) {
+  .win11 {
+    width: 98vw;
+    min-width: unset;
+    padding: 0 0 12px 0;
+  }
+  .start-header,
+  .pinned-section,
+  .recommended-section {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+  .pinned-icons {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px 10px;
+  }
+  .icons {
+    grid-template-columns: repeat(2, 60px);
+    gap: 18px 18px;
+  }
+  .icon-emoji {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+}
